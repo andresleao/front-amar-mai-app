@@ -1,0 +1,54 @@
+.container {
+    border: 2px solid white;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-size: 2rem;
+    padding: 1rem 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 8px solid rgba(33, 157, 158, 1);
+    background: linear-gradient(0deg, rgba(30, 175, 158, 1) 0%, rgba(33, 157, 158, 1) 48%, rgba(8, 136, 131, 0.8743872549019608) 100%);
+}
+
+mat-icon {
+    font-size: 2.7rem;
+    margin-right: 2rem;
+    margin-bottom: 1.2rem;
+}
+
+.form {
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    border-left: 3px solid white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 5px 0;
+    display: block;
+    align-items: center;
+    background: linear-gradient(0deg, rgba(46, 208, 189, 1) 0%, rgba(33, 157, 158, 1) 48%, rgba(28, 184, 177, 0.8743872549019608) 100%);
+}
+
+.full-width {
+    width: 90%;
+    display: block;
+    margin: 1rem auto;
+    font-size: 1rem;
+}
+
+.titulo {
+    width: 30%;
+    margin: auto;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    border-left: 3px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}

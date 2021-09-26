@@ -1,0 +1,79 @@
+mat-card {
+    width: 60%;
+    height: 50%;
+    margin: 1rem auto 0 auto;
+    background: #b3ffcc;
+    border: 3px solid #05c46b;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+h1 {
+    border-bottom: 5px solid #05c46b;
+    border-top: 5px solid #05c46b;
+    margin: 0;
+    background: #b3ffcc;
+    padding: 10px 0;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+mat-card-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    border: 1.5px solid #05c46b;
+}
+
+mat-card-title h1 {
+    color: black;
+    font-size: 2.5rem;
+}
+
+mat-card-subtitle {
+    color: #008000;
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+mat-icon {
+    color: #05c46b;
+    font-size: 2.2rem;
+}
+
+.icones {
+    display: flex;
+    justify-content: center;
+}
+
+.carrinho {
+    margin-right: 1rem;
+}
+
+img {
+    height: 300px;
+    width: 500px;
+    border-radius: 10px;
+}
+
+.register-btn {
+    width: 90%;
+    margin: 1.7rem auto 0 auto;
+    text-align: center;
+}
+
+button {
+    width: 70%;
+    font-size: 1.3rem;
+}
+
+button:hover {
+    background: #05c46b;
+    color: white;
+}

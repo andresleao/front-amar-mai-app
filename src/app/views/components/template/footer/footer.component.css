@@ -1,0 +1,24 @@
+.footer {
+    height: 7%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #05c46b;
+}
+
+p {
+    color: white;
+    margin: 0;
+    font-size: 1rem;
+    border: 1px solid white;
+    padding: 0 2%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+mat-icon {
+    margin-left: 1rem;
+}

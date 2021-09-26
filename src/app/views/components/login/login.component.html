@@ -1,0 +1,29 @@
+<div class="titulo">
+    <h1>
+        <mat-icon>account_circle</mat-icon>
+        Login</h1>
+</div>
+
+<form class="mat-elevation-z8 form">
+    <div class="dupla-colunas">
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Login</mat-label>
+            <input required maxlength="100" name="email" matInput placeholder="Ex. email@mail.com">
+            <!-- <mat-error *ngIf="nome.invalid">
+              <div class="errors">
+                  {{ errorValidName() }}
+              </div>
+          </mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Senha</mat-label>
+            <input type="password" required maxlength="100" name="senha" matInput>
+            <!-- <mat-error *ngIf="sobrenome.invalid">
+              <div class="errors">
+                  {{ errorValidName() }}
+              </div>
+          </mat-error> -->
+        </mat-form-field>
+    </div>
+</form>

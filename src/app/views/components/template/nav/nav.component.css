@@ -1,0 +1,38 @@
+.container {
+    height: 82%;
+    background: #78e08f;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+i {
+    margin-right: 1rem;
+}
+
+mat-nav-list a:hover {
+    background: #6ab04c;
+}
+
+button {
+    margin: 1rem auto 0 1rem;
+}
+
+.sidenav {
+    background: #05c46b;
+    border-right: 2px solid white;
+}
+
+.toggle-btn {
+    background: #05c46b;
+    color: white;
+}
+
+.toggle-btn:hover {
+    background: white;
+    color: #05c46b;
+}
+
+mat-icon {
+    font-size: 2rem;
+    margin-right: 6px;
+}

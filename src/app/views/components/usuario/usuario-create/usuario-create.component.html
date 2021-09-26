@@ -1,0 +1,85 @@
+<div class="titulo">
+    <h1 class="mat-elevation-z8">
+        <mat-icon>account_circle</mat-icon>
+        Cadastro
+    </h1>
+</div>
+
+<div class="mat-elevation-z8 form-container">
+    <div class="foto-layout">
+        <img src="assets/img/donation.jpg" alt="">
+    </div>
+    <div>
+        <form class="form">
+            <div class="dupla-colunas">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Nome</mat-label>
+                    <input [(ngModel)]="usuario.nome" [formControl]="nome" required maxlength="100" name="nome" matInput placeholder="Ex. Eddie Murphy">
+                    <mat-error *ngIf="nome.invalid">
+                        <div class="errors">
+                            {{ errorValidName() }}
+                        </div>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Sobrenome</mat-label>
+                    <input [(ngModel)]="usuario.sobrenome" [formControl]="sobrenome" required maxlength="100" name="sobrenome" matInput placeholder="Ex. Eddie Murphy">
+                    <mat-error *ngIf="sobrenome.invalid">
+                        <div class="errors">
+                            {{ errorValidName() }}
+                        </div>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="dupla-colunas">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>CPF</mat-label>
+                    <input [(ngModel)]="usuario.cpf" [formControl]="cpf" required maxlength="14" name="cpf" matInput placeholder="Ex. 000.000.000-00">
+                    <mat-error *ngIf="cpf.invalid">
+                        <div class="errors">
+                            {{ errorValidCpf() }}
+                        </div>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input type="email" [(ngModel)]="usuario.email" [formControl]="email" required name="email" matInput placeholder="Ex. email@mail.com">
+                    <mat-error *ngIf="email.invalid">
+                        <div class="errors">
+                            {{ errorValidEmail() }}
+                        </div>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Telefone</mat-label>
+                <input [(ngModel)]="usuario.telefone" [formControl]="telefone" required maxlength="18" name="telefone" matInput placeholder="Ex. (00)99999-9999">
+                <mat-error *ngIf="telefone.invalid">
+                    <div class="errors">
+                        {{ errorValidTelefone() }}
+                    </div>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Senha</mat-label>
+                <input type="password" [(ngModel)]="usuario.senha" [formControl]="senha" required name="senha" matInput>
+                <mat-error *ngIf="senha.invalid">
+                    <div class="errors">
+                        {{ errorValidSenha() }}
+                    </div>
+                </mat-error>
+            </mat-form-field>
+
+            <div class="btns">
+                <button class="btn-criar" mat-raised-button color="primary" [disabled]="errorValidName() || errorValidSobrenome() || errorValidCpf() || 
+                errorValidEmail() || errorValidTelefone() || errorValidSenha()" (click)="create()">CRIAR
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

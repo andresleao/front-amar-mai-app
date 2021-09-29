@@ -55,25 +55,49 @@
                 </mat-form-field>
             </div>
 
-            <mat-form-field class="full-width" appearance="fill">
-                <mat-label>Telefone</mat-label>
-                <input [(ngModel)]="usuario.telefone" [formControl]="telefone" required maxlength="18" name="telefone" matInput placeholder="Ex. (00)99999-9999">
-                <mat-error *ngIf="telefone.invalid">
-                    <div class="errors">
-                        {{ errorValidTelefone() }}
-                    </div>
-                </mat-error>
-            </mat-form-field>
+            <div class="dupla-colunas">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Cidade</mat-label>
+                    <input [(ngModel)]="usuario.cidade" [formControl]="cidade" required maxlength="40" name="cidade" matInput placeholder="Ex. Recife">
+                    <mat-error *ngIf="cidade.invalid">
+                        <div class="errors">
+                            {{ errorValidCidade() }}
+                        </div>
+                    </mat-error>
+                </mat-form-field>
 
-            <mat-form-field class="full-width" appearance="fill">
-                <mat-label>Senha</mat-label>
-                <input type="password" [(ngModel)]="usuario.senha" [formControl]="senha" required name="senha" matInput>
-                <mat-error *ngIf="senha.invalid">
-                    <div class="errors">
-                        {{ errorValidSenha() }}
-                    </div>
-                </mat-error>
-            </mat-form-field>
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Bairro</mat-label>
+                    <input [(ngModel)]="usuario.bairro" [formControl]="bairro" required name="bairro" matInput placeholder="Ex. Casa Forte">
+                    <mat-error *ngIf="bairro.invalid">
+                        <div class="errors">
+                            {{ errorValidBairro() }}
+                        </div>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="dupla-colunas">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Telefone</mat-label>
+                    <input [(ngModel)]="usuario.telefone" [formControl]="telefone" required maxlength="18" name="telefone" matInput placeholder="Ex. (00)99999-9999">
+                    <mat-error *ngIf="telefone.invalid">
+                        <div class="errors">
+                            {{ errorValidTelefone() }}
+                        </div>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Senha</mat-label>
+                    <input type="password" [(ngModel)]="usuario.senha" [formControl]="senha" required name="senha" matInput>
+                    <mat-error *ngIf="senha.invalid">
+                        <div class="errors">
+                            {{ errorValidSenha() }}
+                        </div>
+                    </mat-error>
+                </mat-form-field>
+            </div>
 
             <div class="btns">
                 <button class="btn-criar" mat-raised-button color="primary" [disabled]="errorValidName() || errorValidSobrenome() || errorValidCpf() || 

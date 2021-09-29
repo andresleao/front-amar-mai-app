@@ -4,32 +4,52 @@ mat-icon {
     margin-right: .7rem;
 }
 
-.titulo h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    width: 80%;
+.titulo {
+    width: 70%;
     margin: auto;
-    padding: 3px 0;
-    border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    margin-bottom: 1rem;
+    border-top-right-radius: 10px;
+    background: linear-gradient(0deg, rgba(46, 208, 189, 1) 0%, rgba(33, 157, 158, 1) 48%, rgba(28, 184, 177, 0.8743872549019608) 100%);
+    padding: .6rem 0;
 }
 
 h1 {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 4rem;
+    margin: 0 auto;
 }
 
 .form {
     width: 70%;
     margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: linear-gradient(0deg, rgba(46, 208, 189, 1) 0%, rgba(33, 157, 158, 1) 48%, rgba(28, 184, 177, 0.8743872549019608) 100%);
+    padding: 1rem 0;
+}
+
+.box {
+    padding: 0 20px;
+}
+
+img {
+    height: 300px;
+    width: 400px;
+    margin-left: 1rem;
+}
+
+.fields {
+    border-left: 3px solid white;
+    padding: 0 20px;
 }
 
 .full-width {
     display: block;
-    width: 30%;
+    width: 95%;
     margin-bottom: 1.4rem;
+}
+
+.input-file {
+    display: block;
 }

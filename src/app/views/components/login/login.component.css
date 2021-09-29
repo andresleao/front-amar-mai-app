@@ -1,5 +1,11 @@
-.container {
-    border: 2px solid white;
+.titulo {
+    width: 30%;
+    margin: auto;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    border-left: 3px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 h1 {
@@ -11,7 +17,7 @@ h1 {
     padding: 1rem 0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-bottom: 8px solid rgba(33, 157, 158, 1);
+    border-bottom: 4px solid white;
     background: linear-gradient(0deg, rgba(30, 175, 158, 1) 0%, rgba(33, 157, 158, 1) 48%, rgba(8, 136, 131, 0.8743872549019608) 100%);
 }
 
@@ -43,12 +49,28 @@ mat-icon {
     font-size: 1rem;
 }
 
-.titulo {
-    width: 30%;
+button {
+    width: 90%;
+    margin-bottom: 1.5rem;
+}
+
+.errors {
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.errorLogin {
+    width: 28%;
     margin: auto;
-    border-top: 3px solid white;
-    border-right: 3px solid white;
-    border-left: 3px solid white;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    margin-top: 1rem;
+    text-align: center;
+    padding: .8rem;
+    background: #ffcccc;
+    border-radius: 10px;
+}
+
+.messageError {
+    color: red;
+    font-size: 1rem;
+    font-weight: 500;
 }

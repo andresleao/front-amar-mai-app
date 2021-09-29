@@ -19,6 +19,8 @@ export class UsuarioCreateComponent implements OnInit {
     sobrenome: '',
     cpf: '',
     email: '',
+    cidade: '',
+    bairro: '',
     telefone: '',
     senha: ''
   }
@@ -27,6 +29,8 @@ export class UsuarioCreateComponent implements OnInit {
   sobrenome = new FormControl('', [Validators.minLength(2)]);
   cpf = new FormControl('', [Validators.minLength(11)]);
   email = new FormControl('', [Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]);
+  cidade = new FormControl('', [Validators.minLength(2)]);
+  bairro = new FormControl('', [Validators.minLength(2)]);
   telefone = new FormControl('', [Validators.minLength(11)]);
   senha = new FormControl('', [Validators.minLength(5)]);
 
@@ -86,6 +90,20 @@ export class UsuarioCreateComponent implements OnInit {
   errorValidEmail() {
     if (this.email.invalid) {
       return 'O email precisa ser válido!';
+    }
+    return false;
+  }
+
+  errorValidCidade() {
+    if (this.cidade.invalid) {
+      return 'A cidade precisa ser válida!';
+    }
+    return false;
+  }
+
+  errorValidBairro() {
+    if (this.bairro.invalid) {
+      return 'O bairro precisa ser válida!';
     }
     return false;
   }

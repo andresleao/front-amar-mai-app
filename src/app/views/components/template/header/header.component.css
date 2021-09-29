@@ -1,6 +1,6 @@
 .header {
-    height: 11%;
     display: flex;
+    height: 11%;
     align-items: center;
     justify-content: center;
     background: #05c46b;
@@ -15,17 +15,13 @@ h1 {
     font-weight: bold;
 }
 
-.logo {
-    color: #05c46b;
-    border-radius: 45%;
-    background: white;
-    margin-left: 3px;
-    font-size: 3rem;
-}
-
 mat-icon {
     margin-right: 1rem;
     font-size: 1.7rem;
     display: flex;
     align-items: center;
+}
+
+.login {
+    margin-left: 30rem;
 }

@@ -4,6 +4,8 @@ export interface UsuarioDto {
   sobrenome: String;
   cpf: String;
   email: String;
+  cidade: String;
+  bairro: String;
   telefone: String;
   senha: String;
 }

@@ -18,9 +18,25 @@ export class AuthService {
   obterToken() {
     const tokenString = localStorage.getItem('access_token');
     if (tokenString) {
-      const token = JSON.parse(tokenString).access_token;
+      const token = JSON.parse(tokenString);
       return token;
     } 
+    return null;
+  }
+
+  encerrarSessao() {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('id');
+    localStorage.removeItem('login');
+  }
+
+  getUsuarioAutenticado() {
+    const token = this.obterToken();
+    if(token) { 
+      const login = this.jwtHelper.decodeToken(token).sub;
+     
+      return login;
+    }
     return null;
   }
 

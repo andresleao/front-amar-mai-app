@@ -17,12 +17,15 @@
     </mat-drawer>
 
     <div class="sidenav-content">
-        <button class="toggle-btn mat-elevation-z8" mat-icon-button (click)="drawer.toggle()">
+        <div class="login">
+            <button *ngIf="usuarioLogado" mat-raised-button color="primary">
+                <mat-icon>account_box</mat-icon>
+               {{usuarioLogado}}
+            </button>
+        </div>
+        <button [disabled]="isAuntenticated === false" mat-icon-button [ngClass]="{'toggle-btn mat-elevation-z8': isAuntenticated}" (click)="drawer.toggle()">
             <mat-icon>more_vert</mat-icon>
         </button>
-        <!-- <button [(ngModel)]="autenticado" [disabled]="autenticado === false" mat-icon-button [ngClass]="{'toggle-btn mat-elevation-z8': autenticado}" (click)="drawer.toggle()">
-            <mat-icon>more_vert</mat-icon>
-        </button> -->
         <router-outlet></router-outlet>
     </div>
 </mat-drawer-container>

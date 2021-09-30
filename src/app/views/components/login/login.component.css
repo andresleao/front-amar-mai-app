@@ -62,9 +62,9 @@ button {
 .errorLogin {
     width: 28%;
     margin: auto;
-    margin-top: 1rem;
+    margin-top: .6rem;
     text-align: center;
-    padding: .8rem;
+    padding: .4rem .8rem;
     background: #ffcccc;
     border-radius: 10px;
 }

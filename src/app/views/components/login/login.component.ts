@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
 
   apiUrl: string = environment.baseUrl + '/login';
-
+  
   login: Login = {
     id: '',
     email: '',
@@ -39,9 +39,14 @@ export class LoginComponent implements OnInit {
     this.authService
       .autenticar(this.login)
       .subscribe(resposta => {
+        const id = JSON.stringify(resposta.id);
+        const login = JSON.stringify(resposta.login);
         const access_token = JSON.stringify(resposta.token);
+        localStorage.setItem('id', id);
+        localStorage.setItem('login', login);
         localStorage.setItem('access_token', access_token);
         this.router.navigate(['doacoes']);
+        //this.router.navigate(['']);
       }, err => {
          if (err.error.error.match("Login inválido!")) {
           this.setLoginMessage = true;
@@ -52,6 +57,10 @@ export class LoginComponent implements OnInit {
           this.setSenhaMessage = true;
         }
       });
+  }
+
+  voltar() {
+    this.router.navigate(['']);
   }
 
   email = new FormControl('', [Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]);

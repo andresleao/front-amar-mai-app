@@ -84,6 +84,23 @@ img {
     text-align: center;
 }
 
+.register-btn mat-icon {
+    color: white;
+}
+
+.register-btn button {
+    color: white;
+}
+
+.register-btn button:hover {
+    background: white;
+    color: black;
+}
+
+.register-btn button:hover mat-icon {
+    color: black;
+}
+
 button:hover {
     background: white;
     color: black;

@@ -16,7 +16,6 @@
             </mat-error>
         </mat-form-field>
 
-
         <mat-form-field class="full-width" appearance="fill">
             <mat-label>Senha</mat-label>
             <input [(ngModel)]="login.senha" [formControl]="senha" type="password" required maxlength="100" name="senha" matInput (click)="messageReset()">
@@ -26,7 +25,9 @@
                 </div>
             </mat-error>
         </mat-form-field>
-        <button class="btn-criar" mat-raised-button color="primary" [disabled]="errorValidEmail() || errorValidSenha()" (click)="logar()">Entrar
+        <button mat-raised-button color="primary" [disabled]="errorValidEmail() || errorValidSenha()" (click)="logar()">Entrar
+        </button>
+        <button mat-raised-button color="warn" (click)="voltar()">Voltar
         </button>
     </div>
 </form>

@@ -1,7 +1,7 @@
 <div class="titulo">
     <h1 class="mat-elevation-z8">
-        <mat-icon>account_circle</mat-icon>
-        Cadastro
+        <mat-icon>settings</mat-icon>
+        Atualizar Conta
     </h1>
 </div>
 
@@ -36,7 +36,7 @@
             <div class="dupla-colunas">
                 <mat-form-field class="full-width" appearance="fill">
                     <mat-label>CPF</mat-label>
-                    <input [(ngModel)]="usuario.cpf" [formControl]="cpf" required maxlength="14" name="cpf" matInput placeholder="Ex. 000.000.000-00">
+                    <input [(ngModel)]="usuario.cpf" [formControl]="cpf" required maxlength="14" name="cpf" matInput>
                     <mat-error *ngIf="cpf.invalid">
                         <div class="errors">
                             {{ errorValidCpf() }}
@@ -46,7 +46,7 @@
 
                 <mat-form-field class="full-width" appearance="fill">
                     <mat-label>Email</mat-label>
-                    <input type="email" [(ngModel)]="usuario.email" [formControl]="email" required name="email" matInput placeholder="Ex. email@mail.com">
+                    <input class="email-input" type="email" [(ngModel)]="usuario.email" [formControl]="email" [disabled]="isBlocked" required name="email" matInput>
                     <mat-error *ngIf="email.invalid">
                         <div class="errors">
                             {{ errorValidEmail() }}
@@ -101,8 +101,8 @@
 
             <div class="btns">
                 <button class="btn-criar" mat-raised-button color="primary" [disabled]="errorValidName() || errorValidSobrenome() || errorValidCpf() || 
-                errorValidEmail() || errorValidTelefone() || errorValidSenha()" (click)="create()">CRIAR
-                </button>
+              errorValidEmail() || errorValidTelefone() || errorValidSenha()" (click)="update()">Salvar
+              </button>
                 <button class="btn-criar" mat-raised-button color="warn" (click)="voltar()">Voltar</button>
             </div>
         </form>

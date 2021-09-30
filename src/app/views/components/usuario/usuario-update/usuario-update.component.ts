@@ -1,17 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from 'src/app/services/usuario.service';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { UsuarioDto } from 'src/app/models/usuarioDto';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
-  selector: 'app-usuario-create',
-  templateUrl: './usuario-create.component.html',
-  styleUrls: ['./usuario-create.component.css']
+  selector: 'app-usuario-update',
+  templateUrl: './usuario-update.component.html',
+  styleUrls: ['./usuario-update.component.css']
 })
-export class UsuarioCreateComponent implements OnInit {
+export class UsuarioUpdateComponent implements OnInit {
 
-  showSuccesMessage: boolean = true;
+  id_user: string | null = '';
+  email_user: string | null = '';
+  isBlocked: boolean = true;
 
   usuario: UsuarioDto = {
     id: '',
@@ -24,7 +27,7 @@ export class UsuarioCreateComponent implements OnInit {
     telefone: '',
     senha: ''
   }
-  
+
   nome = new FormControl('', [Validators.minLength(3)]);
   sobrenome = new FormControl('', [Validators.minLength(2)]);
   cpf = new FormControl('', [Validators.minLength(11)]);
@@ -34,35 +37,39 @@ export class UsuarioCreateComponent implements OnInit {
   telefone = new FormControl('', [Validators.minLength(11)]);
   senha = new FormControl('', [Validators.minLength(5)]);
 
-  constructor (
-    private router : Router,
-    private service: UsuarioService
-  ) { }
+  constructor(private router: Router, private service: UsuarioService) { }
 
   ngOnInit(): void {
+    this.id_user = localStorage.getItem('id');
+    this.email_user = localStorage.getItem('login');
+    this.findById();
   }
 
-  create(): void {
-    this.service.create(this.usuario).subscribe((resposta) => {
-      this.router.navigate(['login']);
-      this.service.message("Usuário criado com sucesso!");
-    },  err => {
-      if (err.error.error.match('CPF e Email já cadastrados!')) {
-        this.service.message(err.error.error);
-      } else if (err.error.error.match('CPF já cadastrado!')) {
-        this.service.message(err.error.error);
-      } else if (err.error.error.match('Email já cadastrado!')) {
-        this.service.message(err.error.error);
-      } else if ((err.error.errors[0].message === 'número do registro de contribuinte individual brasileiro (CPF) inválido')) {
+  findById(): void {
+    this.service.findById(this.id_user).subscribe(resposta => {
+      this.usuario = resposta;
+    });
+  }
+
+  update(): void {
+    this.service.update(this.usuario).subscribe((resposta) => {
+      this.router.navigate(['doacoes']);
+      this.service.message('Atualização realizada com sucesso!');
+    }, err => {
+      console.log(err);
+      if (err.error.error.match('CPF já cadastrado!')) {
+         this.service.message(err.error.error);
+       }
+        if ((err.error.errors[0].message === 'número do registro de contribuinte individual brasileiro (CPF) inválido')) {
         this.service.message("CPF inválido!");
-      }
+       }
     });
   }
 
   voltar() {
-    this.router.navigate(['']);
+    this.router.navigate(['doacoes']);
   }
-  
+
   errorValidName() {
     if (this.nome.invalid) {
       return 'O nome deve ter entre 3  a 100 caracteres!';
@@ -118,4 +125,5 @@ export class UsuarioCreateComponent implements OnInit {
     }
     return false;
   }
+
 }

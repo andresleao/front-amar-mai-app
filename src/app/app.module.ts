@@ -27,6 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './views/components/login/login.component';
 import { DoacaoCreateComponent } from './views/components/doacao/doacao-create/doacao-create.component';
 import { MatSelectModule } from '@angular/material/select';
+import { LayoutComponent } from './layout/layout.component';
+import { UsuarioUpdateComponent } from './views/components/usuario/usuario-update/usuario-update.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { MatSelectModule } from '@angular/material/select';
     DoacaoReadComponent,
     UsuarioCreateComponent,
     LoginComponent,
-    DoacaoCreateComponent
+    DoacaoCreateComponent,
+    LayoutComponent,
+    UsuarioUpdateComponent
   ],
   imports: [
     BrowserModule,

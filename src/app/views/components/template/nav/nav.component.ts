@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-
-  constructor() { }
+  
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+   
   }
 
+  usuarioAutenticado(): boolean {
+    return this.authService.isAuthenticated();
+  }
 }
+function ngAfterContentChecked() {
+  throw new Error('Function not implemented.');
+}
+

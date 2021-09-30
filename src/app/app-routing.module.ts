@@ -5,6 +5,8 @@ import { DoacaoReadComponent } from './views/components/doacao/doacao-read/doaca
 import { HomeComponent } from './views/components/home/home.component';
 import { LoginComponent } from './views/components/login/login.component';
 import { UsuarioCreateComponent } from './views/components/usuario/usuario-create/usuario-create.component';
+import { AuthGuard } from './auth.guard';
+import { UsuarioUpdateComponent } from './views/components/usuario/usuario-update/usuario-update.component';
 
 const routes: Routes = [
   {
@@ -17,17 +19,23 @@ const routes: Routes = [
   },
   {
     path: 'doacoes',
-    component: DoacaoReadComponent
+    component: DoacaoReadComponent, canActivate: [AuthGuard]
   },
   {
     path: 'doacoes/create',
-    component: DoacaoCreateComponent
+    component: DoacaoCreateComponent, 
   },
   {
     path: 'usuario/create',
     component: UsuarioCreateComponent
+  },
+  {
+    path: 'usuario/update',
+    component: UsuarioUpdateComponent
   }
 ];
+
+canActivate: [AuthGuard]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

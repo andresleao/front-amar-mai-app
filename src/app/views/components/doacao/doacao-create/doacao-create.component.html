@@ -13,38 +13,41 @@
     <div class="fields">
         <mat-form-field class="full-width" appearance="fill">
             <mat-label>Categoria</mat-label>
-            <mat-select>
-                <mat-option value="MEDICACAO">Medicação</mat-option>
-                <mat-option value="EQUIPAMENTO">Equipamento</mat-option>
-                <mat-option value="MOBILIARIO">Mobiliário</mat-option>
+            <mat-select [(ngModel)]="item.classificacao" name="classificacao" matInput>
+                <mat-option value="1">Medicação</mat-option>
+                <mat-option value="2">Mobiliário</mat-option>
+                <mat-option value="3">Equipamento</mat-option>
             </mat-select>
         </mat-form-field>
 
         <mat-form-field class="full-width" appearance="fill">
             <mat-label>Nome do item</mat-label>
-            <input required maxlength="100" name="senha" matInput>
-            <!-- <mat-error *ngIf="sobrenome.invalid">
-            <div class="errors">
-                {{ errorValidName() }}
-            </div>
-        </mat-error> -->
+            <input [(ngModel)]="item.nome" [formControl]="nome" required maxlength="100" name="nome" matInput placeholder="Ex. Cadeira de rodas">
+            <mat-error *ngIf="nome.invalid">
+                <div class="errors">
+                    {{ errorValidName() }}
+                </div>
+            </mat-error>
         </mat-form-field>
 
         <mat-form-field class="full-width" appearance="fill">
             <mat-label>Descrição</mat-label>
-            <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-            <!-- <mat-error *ngIf="sobrenome.invalid">
-            <div class="errors">
-                {{ errorValidName() }}
-            </div>
-        </mat-error> -->
+            <textarea [(ngModel)]="item.descricao" [formControl]="descricao" required maxlength="200" name="descricao" matInput placeholder="Ex. Estado de conservação"></textarea>
+            <mat-error *ngIf="descricao.invalid">
+                <div class="errors">
+                    {{ errorValidDescricao() }}
+                </div>
+            </mat-error>
         </mat-form-field>
 
-        <!-- <div class="input-file">
-            <label>Foto</label>
+        <div class="input-file" [(ngModel)]="item.foto">
+            <label>Foto:</label>
             <input type="file">
-        </div> -->
-
-
+        </div>
+        <div class="btns">
+            <button class="btn-criar" mat-raised-button color="primary" [disabled]="errorValidName()|| errorValidDescricao()" (click)="create()">CRIAR
+        </button>
+            <button class="btn-criar" mat-raised-button color="warn" (click)="voltar()">Voltar</button>
+        </div>
     </div>
 </form>

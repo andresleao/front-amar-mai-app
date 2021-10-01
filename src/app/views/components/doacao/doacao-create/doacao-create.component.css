@@ -52,4 +52,18 @@ img {
 
 .input-file {
     display: block;
+    margin-bottom: 1.5rem;
+}
+
+.input-file label {
+    margin-right: 1rem;
+}
+
+.btns {
+    display: flex;
+}
+
+button {
+    width: 45%;
+    margin: 0 1rem 0 0;
 }

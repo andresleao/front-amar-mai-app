@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Doacao } from '../models/Doacao';
 import { Observable } from 'rxjs';
+import { DoacaoList } from '../models/DoacaoList';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,16 @@ export class DoacaoService {
       return this.http.post<Doacao>(url, doacao);
     }
 
+    findAll(): Observable<DoacaoList[]> {
+      const url = this.baseUrl + '/doacao';
+      return this.http.get<DoacaoList[]>(url);
+    }
+
+    findById(id: any): Observable<DoacaoList> {
+      const url = this.baseUrl + '/doacao/' + id;
+      return this.http.get<DoacaoList>(url);
+    }
+    
     message(msg: String): void {
       this.snack.open(`${msg}`, 'OK', {
         horizontalPosition: 'center',

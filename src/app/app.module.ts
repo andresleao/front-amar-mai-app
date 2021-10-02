@@ -29,6 +29,7 @@ import { DoacaoCreateComponent } from './views/components/doacao/doacao-create/d
 import { MatSelectModule } from '@angular/material/select';
 import { LayoutComponent } from './layout/layout.component';
 import { UsuarioUpdateComponent } from './views/components/usuario/usuario-update/usuario-update.component';
+import { DoacaoDetalhesComponent } from './views/components/doacao/doacao-detalhes/doacao-detalhes.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { UsuarioUpdateComponent } from './views/components/usuario/usuario-updat
     LoginComponent,
     DoacaoCreateComponent,
     LayoutComponent,
-    UsuarioUpdateComponent
+    UsuarioUpdateComponent,
+    DoacaoDetalhesComponent
   ],
   imports: [
     BrowserModule,

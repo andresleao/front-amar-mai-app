@@ -1,0 +1,157 @@
+mat-card {
+    width: 60%;
+    height: 50%;
+    margin: 1rem auto 0 auto;
+    background: #b3ffcc;
+    border: 3px solid #05c46b;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+mat-card-header {
+    display: flex;
+    justify-content: center;
+}
+
+mat-card-title {
+    margin-top: 4rem;
+}
+
+mat-card-subtitle {
+    text-align: center;
+}
+
+mat-card-subtitle p {
+    margin-top: 1rem;
+}
+
+.descricao {
+    margin-bottom: 1rem;
+}
+
+.descricao mat-icon {
+    margin-top: 3px;
+}
+
+h2 {
+    margin: 0;
+}
+
+span {
+    margin: 5px 0;
+}
+
+.doador h2 {
+    margin-bottom: 1rem;
+}
+
+.icon-contato mat-icon {
+    font-size: 4rem;
+}
+
+h3 {
+    margin: 0;
+    background: #b3ffcc;
+    padding: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.contato {
+    padding: 6px;
+    background: linear-gradient(10deg, rgba(255, 255, 255, 1) 12%, rgba(148, 237, 255, 1) 47%, rgba(0, 212, 255, 1) 100%);
+}
+
+.descricao h2 {
+    margin-bottom: 7px;
+}
+
+#doador-icon {
+    font-size: 2rem;
+    margin-bottom: 6px;
+}
+
+.contato h2 {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 12%, rgba(148, 237, 255, 1) 47%, rgba(0, 212, 255, 1) 100%);
+    border-radius: 10px;
+    /* padding: 4px; */
+    border-bottom: 2px solid rgba(0, 130, 250, 1)e;
+}
+
+.icon mat-icon {
+    margin-right: .5rem;
+}
+
+mat-card-header {
+    border-radius: 10px;
+    border: 1.5px solid #05c46b;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 62%, rgba(0, 212, 255, 1) 100%);
+}
+
+mat-card-title h3 {
+    color: black;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-left: 1.1rem;
+}
+
+mat-card-subtitle {
+    color: #008000;
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+mat-icon {
+    color: #05c46b;
+    font-size: 2.2rem;
+}
+
+.contato {
+    border: 2px solid #05c46b;
+    border-radius: 10px;
+}
+
+.detalhes {
+    color: black;
+}
+
+.detalhes p {
+    margin: 0;
+}
+
+.btn {
+    width: 90%;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+}
+
+.btn mat-icon {
+    font-size: 2rem;
+    margin-bottom: 7px;
+    margin-right: 1rem;
+    color: black;
+}
+
+button:hover {
+    background: white;
+    color: black;
+}
+
+button {
+    width: 70%;
+    font-size: 1.3rem;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+}
+
+.detalhes mat-icon {
+    font-size: 1.5rem;
+}

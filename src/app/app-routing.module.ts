@@ -7,6 +7,7 @@ import { LoginComponent } from './views/components/login/login.component';
 import { UsuarioCreateComponent } from './views/components/usuario/usuario-create/usuario-create.component';
 import { AuthGuard } from './auth.guard';
 import { UsuarioUpdateComponent } from './views/components/usuario/usuario-update/usuario-update.component';
+import { DoacaoDetalhesComponent } from './views/components/doacao/doacao-detalhes/doacao-detalhes.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: 'doacoes/create',
     component: DoacaoCreateComponent, 
+  },
+  {
+    path: 'doacoes/aceitar/:id',
+    component: DoacaoDetalhesComponent
   },
   {
     path: 'usuario/create',

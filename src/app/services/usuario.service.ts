@@ -11,8 +11,7 @@ import { UsuarioDto } from '../models/usuarioDto';
 export class UsuarioService {
 
   baseUrl: String = environment.baseUrl;
-  //login: string | null = localStorage.getItem('login');
-
+ 
   constructor(
     private http: HttpClient,
     private snack: MatSnackBar
@@ -32,11 +31,6 @@ export class UsuarioService {
     const url = this.baseUrl + '/usuario/' + usuario.email;
     return this.http.put<UsuarioDto>(url, usuario);
   }
-
-  // update(usuario: UsuarioDto): Observable<UsuarioDto> {
-  //   const url = `${this.baseUrl}/usuario/${this.login}`;
-  //   return this.http.put<UsuarioDto>(url, usuario);
-  // }
 
   message(msg: String): void {
     this.snack.open(`${msg}`, 'OK', {

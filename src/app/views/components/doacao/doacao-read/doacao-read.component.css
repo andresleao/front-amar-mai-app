@@ -59,14 +59,10 @@ mat-paginator {
     background: #003311;
 }
 
+#aceitar {
+    color: yellow;
+}
 
-/* .btn-cadastro {
-    width: 90%;
-    margin-right: auto;
-    margin-left: auto;
-} */
-
-
-/* button {
-    margin: .5rem 0;
-} */
+#aceitar:hover {
+    color: #e6b3ff;
+}

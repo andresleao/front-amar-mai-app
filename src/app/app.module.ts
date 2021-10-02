@@ -30,6 +30,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { LayoutComponent } from './layout/layout.component';
 import { UsuarioUpdateComponent } from './views/components/usuario/usuario-update/usuario-update.component';
 import { DoacaoDetalhesComponent } from './views/components/doacao/doacao-detalhes/doacao-detalhes.component';
+import { UsuarioDoacoesComponent } from './views/components/usuario/usuario-doacoes/usuario-doacoes.component';
+import { UsuarioDonatarioComponent } from './views/components/usuario/usuario-donatario/usuario-donatario.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { DoacaoDetalhesComponent } from './views/components/doacao/doacao-detalh
     DoacaoCreateComponent,
     LayoutComponent,
     UsuarioUpdateComponent,
-    DoacaoDetalhesComponent
+    DoacaoDetalhesComponent,
+    UsuarioDoacoesComponent,
+    UsuarioDonatarioComponent
   ],
   imports: [
     BrowserModule,

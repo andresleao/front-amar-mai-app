@@ -6,6 +6,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Doacao } from '../models/Doacao';
 import { Observable } from 'rxjs';
 import { DoacaoList } from '../models/DoacaoList';
+import { Donatario } from '../models/Donatario';
 
 @Injectable({
   providedIn: 'root'
@@ -28,9 +29,24 @@ export class DoacaoService {
       return this.http.get<DoacaoList[]>(url);
     }
 
+    findAllActives(): Observable<DoacaoList[]> {
+      const url = this.baseUrl + '/doacao/active';
+      return this.http.get<DoacaoList[]>(url);
+    }
+
+    findDoacoes(id: any): Observable<DoacaoList[]> {
+      const url = this.baseUrl + '/doacao/donor/' + id;
+      return this.http.get<DoacaoList[]>(url);
+    }
+
     findById(id: any): Observable<DoacaoList> {
       const url = this.baseUrl + '/doacao/' + id;
       return this.http.get<DoacaoList>(url);
+    }
+
+    aceitarDoacao(id: any, donatario:any): Observable<Donatario> {
+      const url = this.baseUrl + `/doacao/disable/${id}?donatario=${donatario}`;
+      return this.http.put<Donatario>(url, donatario);
     }
     
     message(msg: String): void {

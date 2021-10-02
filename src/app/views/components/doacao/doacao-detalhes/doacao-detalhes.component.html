@@ -8,35 +8,36 @@
         </mat-card-subtitle>
     </mat-card-header>
     <div class="detalhes">
-        <div>
-            <div class="contato mat-elevation-z8">
-                <div class="descricao">
-                    <h2>
-                        <mat-icon id="descricao-icon">description</mat-icon>
-                        Descrição
-                    </h2>
-                    <p>{{this.doacao.itens[0].descricao}}</p>
-                </div>
-
+        <div class="contato mat-elevation-z8">
+            <div class="descricao">
                 <h2>
-                    <span class="icon"><mat-icon id="doador-icon">account_box</mat-icon>Doador</span>
+                    <mat-icon id="descricao-icon">description</mat-icon>
+                    Descrição
                 </h2>
-                <div>
-                    <span class="icon"><mat-icon>perm_identity</mat-icon> Nome: {{this.doacao.usuario.nome}}</span>
-                </div>
-                <div>
-                    <span class="icon"><mat-icon>call</mat-icon> Telefone: {{this.doacao.usuario.telefone}}</span>
-                </div>
-                <div>
-                    <span class="icon"><mat-icon>mail</mat-icon> Email: {{this.doacao.usuario.email}} </span>
-                </div>
+                <p>{{this.doacao.itens[0].descricao}}</p>
+            </div>
+
+            <h2>
+                <span class="icon"><mat-icon id="doador-icon">account_box</mat-icon>Doador</span>
+            </h2>
+            <div>
+                <span class="icon"><mat-icon>perm_identity</mat-icon> Nome: {{this.doacao.usuario.nome}}</span>
+            </div>
+            <div>
+                <span class="icon"><mat-icon>home</mat-icon> Cidade: {{this.doacao.usuario.cidade}},  {{this.doacao.usuario.bairro}}</span>
+            </div>
+            <div>
+                <span class="icon"><mat-icon>call</mat-icon> Telefone: {{this.doacao.usuario.telefone}}</span>
+            </div>
+            <div>
+                <span class="icon"><mat-icon>mail</mat-icon> Email: {{this.doacao.usuario.email}} </span>
             </div>
         </div>
     </div>
 </mat-card>
 
 <div class="btn">
-    <button mat-raised-button color="accent">
+    <button mat-raised-button color="accent" (click)="aceitarDoacao()">
       <mat-icon>card_giftcard</mat-icon>
       <span>Aceitar doação</span>
     </button>

@@ -1,0 +1,68 @@
+.create {
+    width: 25%;
+    margin-right: auto;
+    margin-left: auto;
+    background: #05c46b;
+    border: 2px solid white;
+    border-radius: 15px;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.btn-criar {
+    width: 90%;
+    margin: auto;
+}
+
+button {
+    width: 100%;
+    margin: 0 auto .4rem auto;
+    font-size: 1.4rem;
+}
+
+button:hover {
+    background: white;
+}
+
+mat-icon {
+    margin-right: 5px;
+}
+
+.container {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    border: 2px solid white;
+}
+
+.create h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+}
+
+table {
+    width: 100%;
+    background: #004d1a;
+}
+
+table th {
+    color: white;
+    font-size: 1rem;
+    background: #003311;
+}
+
+mat-paginator {
+    background: #003311;
+}
+
+#aceitar {
+    color: yellow;
+}
+
+#aceitar:hover {
+    color: #e6b3ff;
+}

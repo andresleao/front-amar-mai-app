@@ -14,6 +14,7 @@ import { Route } from '@angular/compiler/src/core';
 export class DoacaoDetalhesComponent implements OnInit {
 
   id_doacao: string | null = '';
+  id_usuario: string | null = '';
 
   user: UsuarioList = {
     nome: '',
@@ -46,13 +47,24 @@ export class DoacaoDetalhesComponent implements OnInit {
   ngOnInit(): void {
     this.id_doacao = this.route.snapshot.paramMap.get('id')!;
     this.findById();
+    this.id_usuario = localStorage.getItem('id');
   }
 
   findById(): void {
     this.service.findById(this.id_doacao).subscribe(resposta => {
       this.doacao = resposta;
-      console.log(resposta);
     });
+  }
+
+  aceitarDoacao() {
+    this.service.aceitarDoacao(this.doacao.id, this.id_usuario).subscribe(resposta => {
+      this.router.navigate(['doacoes'])
+      this.service.message("Muito bem! Agora aguarde o contato do doador!")
+    }, err => {
+      if (err.error.error.match("Usuário donatario não pode ser o usuário doador!")) {
+        this.service.message("Não é possível aceitar sua própria doação!");
+      }
+    })
   }
 
   voltar() {

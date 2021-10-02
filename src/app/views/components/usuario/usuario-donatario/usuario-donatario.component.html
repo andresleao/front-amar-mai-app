@@ -1,0 +1,32 @@
+<mat-card class="mat-elevation-z8">
+    <mat-card-header class="mat-elevation-z8">
+        <mat-card-title>
+            <img src="assets/img/doemais.jpg" alt="">
+        </mat-card-title>
+    </mat-card-header>
+    <div class="detalhes">
+        <div class="contato mat-elevation-z8">
+            <h2>
+                <span class="icon"><mat-icon id="doador-icon">account_box</mat-icon>Donatário</span>
+            </h2>
+            <div>
+                <span class="icon"><mat-icon>perm_identity</mat-icon> Nome: {{usuario.nome}} </span>
+            </div>
+            <div>
+                <span class="icon"><mat-icon>home</mat-icon> Cidade: {{usuario.cidade}} </span>
+            </div>
+            <div>
+                <span class="icon"><mat-icon>call</mat-icon> Telefone: {{usuario.telefone}} </span>
+            </div>
+            <div>
+                <span class="icon"><mat-icon>mail</mat-icon> Email: {{usuario.email}}  </span>
+            </div>
+        </div>
+    </div>
+</mat-card>
+
+<div class="btn">
+    <button mat-raised-button color="warn" (click)="voltar()">
+      <span>Voltar</span>
+    </button>
+</div>

@@ -1,3 +1,4 @@
+import { UsuarioDonatarioComponent } from './views/components/usuario/usuario-donatario/usuario-donatario.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DoacaoCreateComponent } from './views/components/doacao/doacao-create/doacao-create.component';
@@ -8,6 +9,7 @@ import { UsuarioCreateComponent } from './views/components/usuario/usuario-creat
 import { AuthGuard } from './auth.guard';
 import { UsuarioUpdateComponent } from './views/components/usuario/usuario-update/usuario-update.component';
 import { DoacaoDetalhesComponent } from './views/components/doacao/doacao-detalhes/doacao-detalhes.component';
+import { UsuarioDoacoesComponent } from './views/components/usuario/usuario-doacoes/usuario-doacoes.component';
 
 const routes: Routes = [
   {
@@ -37,6 +39,14 @@ const routes: Routes = [
   {
     path: 'usuario/update',
     component: UsuarioUpdateComponent
+  },
+  {
+    path: 'usuario/doacoes',
+    component: UsuarioDoacoesComponent
+  },
+  {
+    path: 'usuario/doacoes/donatario/:id',
+    component: UsuarioDonatarioComponent
   }
 ];
 

@@ -1,0 +1,69 @@
+mat-icon {
+    font-size: 2rem;
+    margin-bottom: 7px;
+    margin-right: .7rem;
+}
+
+.titulo {
+    width: 70%;
+    margin: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: linear-gradient(0deg, rgba(46, 208, 189, 1) 0%, rgba(33, 157, 158, 1) 48%, rgba(28, 184, 177, 0.8743872549019608) 100%);
+    padding: .6rem 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    margin: 0 auto;
+}
+
+.form {
+    width: 70%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: linear-gradient(0deg, rgba(46, 208, 189, 1) 0%, rgba(33, 157, 158, 1) 48%, rgba(28, 184, 177, 0.8743872549019608) 100%);
+    padding: 1rem 0;
+}
+
+.box {
+    padding: 0 20px;
+}
+
+img {
+    height: 300px;
+    width: 400px;
+    margin-left: 1rem;
+}
+
+.fields {
+    border-left: 3px solid white;
+    padding: 0 20px;
+}
+
+.full-width {
+    display: block;
+    width: 95%;
+    margin-bottom: 1.4rem;
+}
+
+.input-file {
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.input-file label {
+    margin-right: 1rem;
+}
+
+.btns {
+    display: flex;
+}
+
+button {
+    width: 45%;
+    margin: 0 1rem 0 0;
+}

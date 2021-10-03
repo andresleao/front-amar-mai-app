@@ -20,7 +20,6 @@ export class DoacaoReadComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   ngAfterViewInit() {
-    //this.findAll();
     this.findAllActives();
   }
 
@@ -33,16 +32,8 @@ export class DoacaoReadComponent implements AfterViewInit {
     this.router.navigate(['doacoes/create'])
   }
 
-  findAll(): void {
-    this.service.findAll().subscribe(resposta => {
-      this.lista = resposta;
-      this.dataSource = new MatTableDataSource<DoacaoList>(this.lista);
-      this.dataSource.paginator = this.paginator;  
-    });
-  }
-
   findAllActives():void {
-    this.service.findAll().subscribe(resposta => {
+    this.service.findAllActives().subscribe(resposta => {
       this.lista = resposta;
       console.log(resposta);
       this.dataSource = new MatTableDataSource<DoacaoList>(this.lista);

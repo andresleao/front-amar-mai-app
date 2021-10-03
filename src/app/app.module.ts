@@ -32,6 +32,7 @@ import { UsuarioUpdateComponent } from './views/components/usuario/usuario-updat
 import { DoacaoDetalhesComponent } from './views/components/doacao/doacao-detalhes/doacao-detalhes.component';
 import { UsuarioDoacoesComponent } from './views/components/usuario/usuario-doacoes/usuario-doacoes.component';
 import { UsuarioDonatarioComponent } from './views/components/usuario/usuario-donatario/usuario-donatario.component';
+import { DoacaoEditComponent } from './views/components/doacao/doacao-edit/doacao-edit.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { UsuarioDonatarioComponent } from './views/components/usuario/usuario-do
     UsuarioUpdateComponent,
     DoacaoDetalhesComponent,
     UsuarioDoacoesComponent,
-    UsuarioDonatarioComponent
+    UsuarioDonatarioComponent,
+    DoacaoEditComponent
   ],
   imports: [
     BrowserModule,

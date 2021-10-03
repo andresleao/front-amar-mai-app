@@ -59,10 +59,16 @@ mat-paginator {
     background: #003311;
 }
 
-#aceitar {
+#donatario,
+#editar {
     color: yellow;
 }
 
-#aceitar:hover {
+#donatario:hover,
+#editar:hover {
     color: #e6b3ff;
+}
+
+#editar {
+    margin-left: .8rem;
 }

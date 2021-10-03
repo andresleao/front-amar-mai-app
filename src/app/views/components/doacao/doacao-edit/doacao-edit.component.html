@@ -1,0 +1,58 @@
+<div class="titulo mat-elevation-z8">
+    <h1>
+        <mat-icon>card_giftcard</mat-icon>
+        Editar doação
+    </h1>
+</div>
+
+<form class="mat-elevation-z8 form">
+    <div class="box">
+        <img src="assets/img/box.jpg" alt="">
+    </div>
+
+    <div class="fields">
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Categoria</mat-label>
+            <mat-select [(ngModel)]="item.classificacao" [(value)]="selected" [formControl]="classificacao" name="classificacao" matInput>
+                <mat-option value="1">Medicação</mat-option>
+                <mat-option value="2">Mobiliário</mat-option>
+                <mat-option value="3">Equipamento</mat-option>
+            </mat-select>
+            <mat-error *ngIf="nome.invalid">
+                <div class="errors">
+                    {{ errorValidClassificacao() }}
+                </div>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Nome do item</mat-label>
+            <input [(ngModel)]="item.nome" [formControl]="nome" required maxlength="100" name="nome" matInput placeholder="Ex. Cadeira de rodas">
+            <mat-error *ngIf="nome.invalid">
+                <div class="errors">
+                    {{ errorValidName() }}
+                </div>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Descrição</mat-label>
+            <textarea [(ngModel)]="item.descricao" [formControl]="descricao" required maxlength="200" name="descricao" matInput placeholder="Ex. Estado de conservação"></textarea>
+            <mat-error *ngIf="descricao.invalid">
+                <div class="errors">
+                    {{ errorValidDescricao() }}
+                </div>
+            </mat-error>
+        </mat-form-field>
+
+        <div class="input-file" [(ngModel)]="item.foto">
+            <label>Foto:</label>
+            <input type="file">
+        </div>
+        <div class="btns">
+            <button class="btn-criar" mat-raised-button color="primary" [disabled]="errorValidName()|| errorValidDescricao()" (click)="update()">Atualizar
+      </button>
+            <button class="btn-criar" mat-raised-button color="warn" (click)="voltar()">Voltar</button>
+        </div>
+    </div>
+</form>

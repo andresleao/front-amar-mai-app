@@ -48,7 +48,7 @@ export class DoacaoCreateComponent implements OnInit {
 
   create(): void {
     this.service.create(this.doacao).subscribe((response) => {
-      this.router.navigate(['doacao']);
+      this.router.navigate(['doacoes']);
       this.service.message("Doação criada com sucesso!");
     });
   }

@@ -22,7 +22,6 @@ export class UsuarioDonatarioComponent implements OnInit {
   telefone: '',
   }
 
-
   constructor( 
     private route: ActivatedRoute,
     private service: UsuarioService,

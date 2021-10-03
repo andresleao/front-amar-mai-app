@@ -10,6 +10,7 @@ import { AuthGuard } from './auth.guard';
 import { UsuarioUpdateComponent } from './views/components/usuario/usuario-update/usuario-update.component';
 import { DoacaoDetalhesComponent } from './views/components/doacao/doacao-detalhes/doacao-detalhes.component';
 import { UsuarioDoacoesComponent } from './views/components/usuario/usuario-doacoes/usuario-doacoes.component';
+import { DoacaoEditComponent } from './views/components/doacao/doacao-edit/doacao-edit.component';
 
 const routes: Routes = [
   {
@@ -47,10 +48,14 @@ const routes: Routes = [
   {
     path: 'usuario/doacoes/donatario/:id',
     component: UsuarioDonatarioComponent
+  },
+  {
+    path: 'usuario/doacoes/doacao/edit/:id',
+    component: DoacaoEditComponent
   }
 ];
 
-canActivate: [AuthGuard]
+// canActivate: [AuthGuard]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

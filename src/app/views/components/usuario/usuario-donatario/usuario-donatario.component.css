@@ -18,9 +18,22 @@ mat-card-header {
 }
 
 img {
-    height: 150px;
-    width: 360px;
+    height: 145px;
+    width: 340px;
     margin-top: 15px;
+    border-radius: 10px;
+    border: 5px solid white;
+}
+
+.donatario {
+    padding: 5px;
+}
+
+#doador-icon {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    margin-right: 1rem;
+    color: #00a0b0;
 }
 
 .detalhes,
@@ -36,6 +49,10 @@ span {
     margin: 5px 0;
 }
 
+.icon {
+    border-bottom: 2px solid white;
+}
+
 .doador h2 {
     margin-bottom: 1rem;
 }
@@ -44,36 +61,16 @@ span {
     font-size: 4rem;
 }
 
-h3 {
-    margin: 0;
-    background: #b3ffcc;
-    padding: 5px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
-    border-radius: 10px;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
 .contato {
     padding: 6px;
     background: linear-gradient(10deg, rgba(255, 255, 255, 1) 12%, rgba(148, 237, 255, 1) 47%, rgba(0, 212, 255, 1) 100%);
 }
 
-.descricao h2 {
-    margin-bottom: 7px;
-}
-
-#doador-icon {
-    font-size: 2rem;
-    margin-bottom: 6px;
-}
-
 .contato h2 {
     background: linear-gradient(180deg, rgba(255, 255, 255, 1) 12%, rgba(148, 237, 255, 1) 47%, rgba(0, 212, 255, 1) 100%);
     border-radius: 10px;
-    border-bottom: 2px solid rgba(0, 130, 250, 1);
-    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
 }
 
 .icon mat-icon {

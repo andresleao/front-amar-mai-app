@@ -1,4 +1,5 @@
 import { AfterContentChecked, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -11,10 +12,20 @@ export class NavComponent implements OnInit, AfterContentChecked {
   usuarioLogado: string  = '';
   isAuntenticated: boolean = false;
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
    
+  }
+
+  logout() {
+    localStorage.removeItem('login');
+    localStorage.removeItem('id');
+    localStorage.removeItem('access_token');
+    this.router.navigate(['']);
   }
 
   ngAfterContentChecked() {

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { environment } from 'src/environments/environment';
 import { Login } from './login';
@@ -46,8 +45,11 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('login', login);
         localStorage.setItem('access_token', access_token);
         this.router.navigate(['doacoes']);
-        //this.router.navigate(['']);
       }, err => {
+        if (err.error.error.match("Usuário não encontrado!")) {
+          this.setLoginMessage = true;
+          this.loginInvalido = err.error.error;
+         }
          if (err.error.error.match("Login inválido!")) {
           this.setLoginMessage = true;
           this.loginInvalido = err.error.error;

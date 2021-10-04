@@ -54,7 +54,7 @@ export class DoacaoCreateComponent implements OnInit {
   }
  
   voltar() {
-    this.router.navigate(['doacao']);
+    this.router.navigate(['doacoes']);
   }
 
   errorValidName() {

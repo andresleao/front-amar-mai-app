@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DoacaoList } from 'src/app/models/DoacaoList';
 import { UsuarioList } from 'src/app/models/UsuarioList';
 import { DoacaoService } from 'src/app/services/doacao.service';
-import { Route } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-doacao-detalhes',
@@ -62,6 +61,7 @@ export class DoacaoDetalhesComponent implements OnInit {
       this.service.message("Muito bem! Agora aguarde o contato do doador!")
     }, err => {
       if (err.error.error.match("Usuário donatario não pode ser o usuário doador!")) {
+        this.router.navigate(['doacoes'])
         this.service.message("Não é possível aceitar sua própria doação!");
       }
     })

@@ -45,6 +45,10 @@ mat-icon {
     margin-top: 4rem;
 }
 
+.logout {
+    cursor: pointer!important;
+}
+
 .login button {
     cursor: default;
 }

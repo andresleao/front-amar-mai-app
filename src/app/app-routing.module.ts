@@ -27,11 +27,11 @@ const routes: Routes = [
   },
   {
     path: 'doacoes/create',
-    component: DoacaoCreateComponent, 
+    component: DoacaoCreateComponent, canActivate: [AuthGuard]
   },
   {
     path: 'doacoes/aceitar/:id',
-    component: DoacaoDetalhesComponent
+    component: DoacaoDetalhesComponent, canActivate: [AuthGuard]
   },
   {
     path: 'usuario/create',
@@ -39,19 +39,19 @@ const routes: Routes = [
   },
   {
     path: 'usuario/update',
-    component: UsuarioUpdateComponent
+    component: UsuarioUpdateComponent, canActivate: [AuthGuard]
   },
   {
     path: 'usuario/doacoes',
-    component: UsuarioDoacoesComponent
+    component: UsuarioDoacoesComponent, canActivate: [AuthGuard]
   },
   {
     path: 'usuario/doacoes/donatario/:id',
-    component: UsuarioDonatarioComponent
+    component: UsuarioDonatarioComponent, canActivate: [AuthGuard]
   },
   {
     path: 'usuario/doacoes/doacao/edit/:id',
-    component: DoacaoEditComponent
+    component: DoacaoEditComponent, canActivate: [AuthGuard]
   }
 ];
 

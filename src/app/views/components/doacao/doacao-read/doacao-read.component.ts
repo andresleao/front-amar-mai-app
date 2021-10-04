@@ -35,7 +35,6 @@ export class DoacaoReadComponent implements AfterViewInit {
   findAllActives():void {
     this.service.findAllActives().subscribe(resposta => {
       this.lista = resposta;
-      console.log(resposta);
       this.dataSource = new MatTableDataSource<DoacaoList>(this.lista);
       this.dataSource.paginator = this.paginator;  
     });

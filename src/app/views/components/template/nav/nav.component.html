@@ -22,6 +22,9 @@
                 <mat-icon>account_box</mat-icon>
                {{usuarioLogado}}
             </button>
+            <button class="logout" *ngIf="usuarioLogado" mat-raised-button color="primary" (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+            </button>
         </div>
         <button [disabled]="isAuntenticated === false" mat-icon-button [ngClass]="{'toggle-btn mat-elevation-z8': isAuntenticated}" (click)="drawer.toggle()">
             <mat-icon>more_vert</mat-icon>

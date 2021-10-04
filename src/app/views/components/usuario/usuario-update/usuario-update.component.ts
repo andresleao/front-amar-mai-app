@@ -60,6 +60,9 @@ export class UsuarioUpdateComponent implements OnInit {
       if (err.error.error.match('CPF já cadastrado!')) {
          this.service.message(err.error.error);
        }
+       if (err.error.error.match('Erro na validação dos campos!')) {
+        this.service.message(err.error.error);
+      }
         if ((err.error.errors[0].message === 'número do registro de contribuinte individual brasileiro (CPF) inválido')) {
         this.service.message("CPF inválido!");
        }

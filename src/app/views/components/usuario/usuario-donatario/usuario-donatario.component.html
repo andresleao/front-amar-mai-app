@@ -6,11 +6,14 @@
     </mat-card-header>
     <div class="detalhes">
         <div class="contato mat-elevation-z8">
-            <h2>
-                <span class="icon"><mat-icon id="doador-icon">account_box</mat-icon>Donatário</span>
-            </h2>
             <div>
-                <span class="icon"><mat-icon>perm_identity</mat-icon> Nome: {{usuario.nome}} {{usuario.sobrenome}}</span>
+                <h2>
+                    <mat-icon id="doador-icon">account_box</mat-icon>
+                    <span>Donatário</span>
+                </h2>
+            </div>
+            <div>
+                <span class="icon"><mat-icon>perm_identity</mat-icon><strong> Nome: {{usuario.nome}} {{usuario.sobrenome}}</strong></span>
             </div>
             <div>
                 <span class="icon"><mat-icon>home</mat-icon> Cidade: {{usuario.cidade}} </span>

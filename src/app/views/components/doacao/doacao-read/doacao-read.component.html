@@ -44,7 +44,7 @@
 
         <ng-container matColumnDef="doador">
             <th mat-header-cell *matHeaderCellDef> Doador </th>
-            <td mat-cell *matCellDef="let element"> {{element.usuario.nome}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.usuario.nome}} {{element.usuario.sobrenome}} </td>
         </ng-container>
 
         <ng-container matColumnDef="cidade">

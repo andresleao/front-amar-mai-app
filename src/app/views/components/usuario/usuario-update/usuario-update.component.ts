@@ -34,7 +34,7 @@ export class UsuarioUpdateComponent implements OnInit {
   email = new FormControl('', [Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]);
   cidade = new FormControl('', [Validators.minLength(2)]);
   bairro = new FormControl('', [Validators.minLength(2)]);
-  telefone = new FormControl('', [Validators.minLength(11)]);
+  telefone = new FormControl('', [Validators.pattern('^\\([0-9]{2}\\)((3[0-9]{3}-[0-9]{4})|(9[0-9]{3}-[0-9]{5}))$')]);
   senha = new FormControl('', [Validators.minLength(5)]);
 
   constructor(private router: Router, private service: UsuarioService) { }
@@ -61,7 +61,7 @@ export class UsuarioUpdateComponent implements OnInit {
          this.service.message(err.error.error);
        }
        if (err.error.error.match('Erro na validação dos campos!')) {
-        this.service.message(err.error.error);
+        this.service.message("CPF inválido");
       }
         if ((err.error.errors[0].message === 'número do registro de contribuinte individual brasileiro (CPF) inválido')) {
         this.service.message("CPF inválido!");
@@ -96,7 +96,7 @@ export class UsuarioUpdateComponent implements OnInit {
 
   errorValidTelefone() {
     if (this.telefone.invalid) {
-      return 'O telefone deve ter entre 11  a 18 caracteres!';
+      return 'Digite um telefone válido!';
     }
     return false;
   }

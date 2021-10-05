@@ -31,7 +31,7 @@ export class UsuarioCreateComponent implements OnInit {
   email = new FormControl('', [Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]);
   cidade = new FormControl('', [Validators.minLength(2)]);
   bairro = new FormControl('', [Validators.minLength(2)]);
-  telefone = new FormControl('', [Validators.minLength(11)]);
+  telefone = new FormControl('', [Validators.pattern('^\\([0-9]{2}\\)((3[0-9]{3}-[0-9]{4})|(9[0-9]{3}-[0-9]{5}))$')]);
   senha = new FormControl('', [Validators.minLength(5)]);
 
   constructor (

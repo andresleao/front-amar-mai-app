@@ -63,9 +63,23 @@ img {
     margin-bottom: 1.4rem;
 }
 
+.disabled {
+    width: 91%;
+    margin: 0 auto;
+    height: 3.3rem;
+    cursor: default;
+    text-align: left;
+    border-bottom: 1px solid #e0e0d1;
+    border-radius: 3px;
+}
+
+.email-input {
+    cursor: default!important;
+}
+
 button {
     width: 50%;
-    margin-left: 1rem;
+    margin-left: 2rem;
 }
 
 .btns {

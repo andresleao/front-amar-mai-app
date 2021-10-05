@@ -44,15 +44,20 @@
                     </mat-error>
                 </mat-form-field>
 
-                <mat-form-field class="full-width" appearance="fill">
+
+                <button class="disabled" [disabled]="isBlocked" mat-raised-button color="primary">{{usuario.email}}</button>
+
+                <!-- <mat-form-field class="full-width" appearance="fill">
                     <mat-label>Email</mat-label>
-                    <input class="email-input" type="email" [(ngModel)]="usuario.email" [formControl]="email" [disabled]="isBlocked" required name="email" matInput>
+                    <button class="disable" [disabled]="isBlocked">
+                    <input class="email-input" type="email" [(ngModel)]="usuario.email" [formControl]="email" required name="email" matInput>
+                    </button>
                     <mat-error *ngIf="email.invalid">
                         <div class="errors">
                             {{ errorValidEmail() }}
                         </div>
                     </mat-error>
-                </mat-form-field>
+                </mat-form-field> -->
             </div>
 
             <div class="dupla-colunas">
@@ -80,7 +85,7 @@
             <div class="dupla-colunas">
                 <mat-form-field class="full-width" appearance="fill">
                     <mat-label>Telefone</mat-label>
-                    <input [(ngModel)]="usuario.telefone" [formControl]="telefone" required maxlength="18" name="telefone" matInput placeholder="Ex. (00)99999-9999">
+                    <input [(ngModel)]="usuario.telefone" [formControl]="telefone" required maxlength="18" name="telefone" matInput placeholder="Ex. (81)9999-99999">
                     <mat-error *ngIf="telefone.invalid">
                         <div class="errors">
                             {{ errorValidTelefone() }}
